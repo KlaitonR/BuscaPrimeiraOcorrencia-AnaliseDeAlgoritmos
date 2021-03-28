@@ -6,7 +6,7 @@ public class BuscaPrimeiraOcorrencia {
 		int cont = 0;
 		boolean sinal = false;
 		
-		//Vetor com 11 posições
+		//Vetor com 11 posições para os três casos
 		int[] A = { 1, 4, 7, 44, 2, 7, 8, 98, 23, 65, 22};
 		int[] A1 = { 6, 3, 6, 9, 2, 5, 8, 98, 23, 65, 22};
 		int[] A2 = { 7, 3, 6, 9, 2, 12, 8, 98, 23, 65, 22};
@@ -15,7 +15,7 @@ public class BuscaPrimeiraOcorrencia {
 		int x1 = 5;
 		int x2 = 11;
 		
-		//Vetor com 21 posições
+		//Vetor com 21 posições para os três casos
 		int[] B = { 1, 43, 7, 44, 2, 7, 8, 98, 23, 65, 22, 5, 24, 5, 34, 5, 8, 5, 90, 5, 42};
 		int[] B1 = { 10, 1, 7, 44, 2, 7, 8, 98, 23, 65, 11, 5, 24, 5, 34, 5, 8, 5, 90, 5, 42};
 		int[] B2 = { 10, 1, 7, 44, 2, 7, 8, 98, 23, 65, 22, 5, 24, 5, 34, 5, 8, 5, 90, 5, 42};
@@ -24,7 +24,7 @@ public class BuscaPrimeiraOcorrencia {
 		int y1 = 11;
 		int y2 = 21;
 		
-		//Vetor com 42 posições
+		//Vetor com 42 posições para os três casos
 		int[] C = { 1, 43, 7, 44, 2, 7, 8, 98, 23, 65, 2, 5, 24, 5, 34, 5, 8, 5, 90, 5, 45, 
 				22, 1, 7, 44, 2, 7, 8, 98, 23, 65, 22, 5, 24, 5, 34, 5, 8, 5, 90, 5, 59};
 		
@@ -38,8 +38,7 @@ public class BuscaPrimeiraOcorrencia {
 		int z1 = 22;
 		int z2 = 42;
 		
-		//Vetor com 11 posições
-		
+		//Saida para vetor com 11 posições para os três casos
 		System.out.println("Vetor com 11 posições \n");
 		System.out.println("Elemento encontrado na primeira posição:");
 		busca(cont, n, A, x, sinal);
@@ -50,7 +49,7 @@ public class BuscaPrimeiraOcorrencia {
 		
 		System.out.println("---------------------------------");
 		
-		//Vetor com 21 posições
+		//Saida para vetor com 21 posições para os três casos
 		System.out.println("Vetor com 21 posições: \n");
 		System.out.println("Elemento encontrado na primeira posição:");
 		busca(cont, n1, B, y, sinal);
@@ -61,7 +60,7 @@ public class BuscaPrimeiraOcorrencia {
 		
 		System.out.println("---------------------------------");
 		
-		//Vetor com 42 posições
+		//Saida para vetor com 42 posições para os três casos
 		 System.out.println("Vetor com 42 posições  \n");
 		 System.out.println("Elemento encontrado na primeira posição:");
 		busca(cont, n2, C, z, sinal);
@@ -69,24 +68,24 @@ public class BuscaPrimeiraOcorrencia {
 		busca(cont, n2, C1, z1, sinal);
 		System.out.println("Elemento não encontrado:");
 		busca(cont, n2, C2, z2, sinal);
-		
-		
-		
 	}
 	
-	
+	//aplica a busca
 	static public void busca(int cont, int n, int A[], int x, boolean sinal) {
 		
-		long init = System.currentTimeMillis();
-		long end;
+		//contador de tempo
+		long init = System.currentTimeMillis(); 
+		long end;								
 		long dif = 0;
 		
 		int j = 0;
 		
+		//aplicando o algoritmo
 		while (A[j] != x && j < n) {
 			j = j + 1;
+			
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1000); //espera 1 segundo
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -95,11 +94,11 @@ public class BuscaPrimeiraOcorrencia {
 		
 		cont = j;
 		
-		if (A[j] != x) {
+		if (A[j] != x) { //verifica 
 			System.out.println("Valor não encontrado");
 			cont++;
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1000); //espera 1 segundo
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -108,7 +107,7 @@ public class BuscaPrimeiraOcorrencia {
 			System.out.println("Valor encontrado na posição " + j);
 			cont++;
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1000); //espera 1 segundo
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
